@@ -1,0 +1,32 @@
+def movie_rating():
+ratings = []
+
+"print(""Welcome to the Movie Rating System!"")"
+"num_reviews = int(input(""How many people will be rating the movie? ""))"
+
+for i in range(num_reviews):
+while True:
+try:
+"rating = float(input(f""Please enter the rating (out of 10) for review {i + 1}: ""))"
+if rating < 0 or rating > 10:
+"raise ValueError(""Rating must be between 0 and 10."")"
+break
+except ValueError as e:
+print(e)
+
+ratings.append(rating)
+
+average_rating = sum(ratings) / len(ratings)
+
+"print(f""\nThe average rating for the movie is: {average_rating:.2f}"")"
+
+movie_rating()
+OUTPUT :
+Welcome to the Movie Rating System!
+How many people will be rating the movie? 3
+Please enter the rating (out of 10) for review 1: 8
+Please enter the rating (out of 10) for review 2: 7
+Please enter the rating (out of 10) for review 3: 6
+
+The average rating for the movie is: 7.00
+PROGRAM :
